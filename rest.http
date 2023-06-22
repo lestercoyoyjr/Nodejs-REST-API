@@ -6,19 +6,19 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "iMac Pro",
-  "price": 4999
+  "name": "MacBook Pro 16.2",
+  "price": 2499
 }
 
 ### GET a product by id
 GET http://localhost:3000/products/5df118b3c86e5826958b661a
 
 ### Update a product by id
-PATCH  http://localhost:3000/products/5df118b3c86e5826958b661a
+PATCH  http://localhost:3000/products/6493e489d01bfb49c86e3b52
 Content-Type: application/json
 
 {
-  "price": 5999
+  "price": 3999
 }
 
 
