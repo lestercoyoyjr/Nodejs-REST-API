@@ -1,0 +1,29 @@
+# Mongodb container
+
+version: '3.9'
+
+services:
+  # mongodb service
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  # Node API service
+  api:
+    build: .
+    ports:
+      - 4000:3000
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb+srv://lcoyoy:HdoBZUW2w0f4iu0f@cluster0.sfya9pf.mongodb.net/?retryWrites=true&w=majority
+      DB_NAME: test
+      DB_USER: lcoyoy
+      DB_PASS: HdoBZUW2w0f4iu0f
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db: {}
